@@ -20,7 +20,7 @@ class ExampleUnitTest extends TestCase
         $user = new User([
             'name' => "Test User",
             'email' => "test@mail.com",
-            'password' => bcrypt("testpassword")
+            'password' => "testpassword"
         ]);   
 
         $this->assertEquals('Test User', $user->name);
