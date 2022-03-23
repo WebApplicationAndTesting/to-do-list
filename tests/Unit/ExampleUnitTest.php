@@ -3,6 +3,7 @@
 namespace Tests\Unit;
 
 use PHPUnit\Framework\TestCase;
+use App\Models\User;
 
 class ExampleUnitTest extends TestCase
 {
@@ -11,12 +12,13 @@ class ExampleUnitTest extends TestCase
      *
      * @return void
      */
-    public function test_example()
+    public function testBasicTest()
     {
         $this->assertTrue(true);
     }
 
-    public function testUserCreation() {
+    public function testUserCreation()
+    {
         $user = new User([
             'name' => "Test User",
             'email' => "test@mail.com",
