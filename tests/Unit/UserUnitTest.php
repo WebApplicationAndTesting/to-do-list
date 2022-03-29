@@ -16,8 +16,6 @@ class UserUnitTest extends TestCase
     // test field in `users` table
     // ======================================================
 
-
-    // test schema: field id are correct
     public function test_schema_id_columns() {
         $this->assertTrue(
             Schema::hasColumn(
@@ -46,7 +44,7 @@ class UserUnitTest extends TestCase
             ), 1);
     }
 
-    // test alternative flow
+    // test main success and alternative flow
     // ======================================================
 
     public function test_user_input_name_eng_language() {
@@ -66,5 +64,22 @@ class UserUnitTest extends TestCase
 
     //     $this->assertEquals();
     // }
+
+
+    // test schema: can input another language (username)?
+    // test schema: can input English language (username)?
+    // test schema: can input only integer (username)?
+    // test schema: can input space (username)?
+    // test schema: can input another language (password)?
+    // test schema: can input English language (password)?
+    // test schema: can input only integer (password)?
+    // test schema: can input space (password)?
+    // test schema: can input another language (email)?
+    // test schema: can input English language (email)?
+    // test schema: can input only integer (email)?
+    // test schema: can input space (email)?
+    // test schema: can input another word (not .com) (email)?
+    // test schema: can input another word (not @gmail ex. @beam.com) (email)?
+    
     
 }

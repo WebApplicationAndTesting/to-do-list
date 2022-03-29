@@ -14,7 +14,6 @@ class TaskUnitTest extends TestCase
     // test field in `tasks` table
     // ======================================================
 
-    // test schema: field user_id are correct
     public function test_schema_user_id_columns() {
         $this->assertTrue(
             Schema::hasColumn(
@@ -50,7 +49,7 @@ class TaskUnitTest extends TestCase
             ), 1);
     }
 
-    // test alternative flow
+    // test main success and alternative flow
     // ======================================================
 
     public function test_user_input_description_eng_language() {
@@ -62,14 +61,15 @@ class TaskUnitTest extends TestCase
         $this->assertEquals(1, $task->user_id);
     }
 
-    // test schema: can input another language?
-    // test schema: can input English language?
-    // test schema: can input only integer?
+    // test schema: can input another language (description)?
+    // test schema: can input English language (description)?
+    // test schema: can input only integer (description)?
+    // test schema: can input space (description)?
+    // test schema: can input over maximum date of month (date)?
+    // test schema: can input space (date)?
+    // test schema: can input over maximum date of month (deadline)?
+    // test schema: can input space (deadline)?
     // test schema: user_id is null?
     // test schema: user_id can be minus number?
-    // test schema: 
-    //
-
-
 
 }
