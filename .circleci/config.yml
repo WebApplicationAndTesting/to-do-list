@@ -7,7 +7,7 @@ jobs:
   build:
     docker:
       # Specify the version you desire here
-      - image: circleci/php:7.4-node-browsers
+      - image: circleci/php:8.0-node-browsers
 
     steps:
       - checkout
@@ -40,20 +40,31 @@ jobs:
           paths:
             - ./vendor
 
+      # prepare database
       - run:
           name: "Generate App key"
           command: php artisan key:generate
 
-      # run tests with phpunit
       - run:
-          name: "Run Unit Tests"
-          command: ./vendor/bin/phpunit tests/Unit
+          name: "Dump-autoload"
+          command: composer dump-autoload
 
       - run:
           name: "Create database and run migration"
           command: |
             touch database/database.sqlite
             php artisan migrate --env=testing
+
+      - run:
+          name: "Create Seeder"
+          command: |
+            php artisan migrate:fresh
+            php artisan db:seed --class=TestSeeder
+
+      # run tests with phpunit
+      - run:
+          name: "Run Unit Tests"
+          command: ./vendor/bin/phpunit tests/Unit
 
       - run:
           name: "Run Http Tests"
