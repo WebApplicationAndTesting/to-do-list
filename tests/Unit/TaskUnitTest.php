@@ -61,6 +61,18 @@ class TaskUnitTest extends TestCase
         $this->assertEquals(1, $task->user_id);
     }
 
+    public function test_user_id_in_task_is_not_navigate_number() {
+        $task = Task::all();
+
+        foreach ($task as $i) {
+            if ($i->user_id > 0) {
+                continue;
+            }
+            $this->assertTrue(false);
+        }
+        $this->assertTrue(true);
+    }
+
     // test schema: can input another language (description)?
     // test schema: can input English language (description)?
     // test schema: can input only integer (description)?
