@@ -158,18 +158,17 @@ class UserUnitTest extends TestCase
             'email' => '12345@gmail.com',
 
         ]);
-
         $this->assertEquals('12345@gmail.com', $user->email);
     }
 
     // test schema: can input space (email)?
-    // public function test_user_input_email_space(){
-    //     $user = new User([
-    //         'id' => 1,
-    //         'email' => 'Do me@gmail.com',
-    //     ]);
-    //     $this->assertEquals('Do me@gmail.com', $user->email);
-    // }
+    public function test_user_input_email_space(){
+        $user = new User([
+            'id' => 1,
+            'email' => 'Do me@gmail.com',
+        ]);
+        $this->assertEquals('Do me@gmail.com', $user->email);
+    }
 
     // test schema: can input another word (not .com) (email)?
     // test schema: can input another word (not @gmail ex. @beam.com) (email)?
