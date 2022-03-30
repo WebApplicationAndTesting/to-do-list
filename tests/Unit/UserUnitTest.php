@@ -80,6 +80,17 @@ class UserUnitTest extends TestCase
         $this->assertModelMissing($user);
     }
 
+    public function test_name_attribute_less_than_41_char() {
+        $user = User::all();
+
+        foreach ($user as $i) {
+            if ($i->name <= 40) {
+                continue;
+            }
+            $this->assertTrue(false);
+        }
+        $this->assertTrue(true);
+    }
 
     // public function test_user_input_name_thai_language() {
     //     $user = new User([
