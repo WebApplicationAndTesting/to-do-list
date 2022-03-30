@@ -11,6 +11,7 @@ use Tests\TestCase;
 
 class TaskUnitTest extends TestCase
 {
+    use WithFaker, RefreshDatabase;
     // test field in `tasks` table
     // ======================================================
 
@@ -72,6 +73,18 @@ class TaskUnitTest extends TestCase
         }
         $this->assertTrue(true);
     }
+
+    // public function test_task_is_null() {
+    //     try {
+    //         $task = new Task();
+    //         $task->user_id = 1;
+    //         $task->save();
+    //         $this->assertTrue(false);
+    //     }
+    //     catch(QueryException $e) {
+    //         $this->assertTrue(true);
+    //     }
+    // }
 
     // test schema: can input another language (description)?
     // test schema: can input English language (description)?
