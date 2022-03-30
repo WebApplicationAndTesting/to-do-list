@@ -117,7 +117,7 @@ class UserUnitTest extends TestCase
     }
 
     // test schema: can input space (username)?
-    public function test_user_input_space(){
+    public function test_user_input_name_space(){
         $user = new User([
             'id' => 1,
             'name' => 'Do me',
@@ -140,6 +140,14 @@ class UserUnitTest extends TestCase
     }
 
     // test schema: can input space (password)?
+    public function test_user_input_password_space(){
+        $user = new User([
+            'id' => 1,
+            'name' => 'Do me',
+        ]);
+        $this->assertEquals('Do me', $user->password);
+    }
+
     // test schema: can input another language (email)?
     // test schema: can input English language (email)?
     // test schema: can input only integer (email)?
