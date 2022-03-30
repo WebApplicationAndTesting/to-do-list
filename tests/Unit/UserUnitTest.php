@@ -104,25 +104,26 @@ class UserUnitTest extends TestCase
 
     // test schema: can input another language (username)?
     // test schema: can input English language (username)?
+
     // test schema: can input only integer (username)?
-    public function test_user_input_name_only_integer(){
-        $user = new User([
-            'id' => 1,
-            'name' => '12345',
-
-        ]);
-
-        $this->assertEquals('12345', $user->name);
-    }
-
-    // test schema: can input space (username)?
-    // public function test_user_input_space(){
+    // public function test_user_input_name_only_integer(){
     //     $user = new User([
     //         'id' => 1,
-    //         'name' => 'Do me',
+    //         'name' => '12345',
+
     //     ]);
-    //     $this->assertEquals('Do me', $user->name);
+
+    //     $this->assertEquals('12345', $user->name);
     // }
+
+    // test schema: can input space (username)?
+    public function test_user_input_space(){
+        $user = new User([
+            'id' => 1,
+            'name' => 'Do me',
+        ]);
+        $this->assertEquals('Do me', $user->name);
+    }
 
     // test schema: can input another language (password)?
     // test schema: can input English language (password)?
