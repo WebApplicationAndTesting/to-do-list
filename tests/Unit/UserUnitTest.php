@@ -143,7 +143,7 @@ class UserUnitTest extends TestCase
     public function test_user_input_password_space(){
         $user = new User([
             'id' => 1,
-            'name' => 'Do me',
+            'password' => 'Do me',
         ]);
         $this->assertEquals('Do me', $user->password);
     }
