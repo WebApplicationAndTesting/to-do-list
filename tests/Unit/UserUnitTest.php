@@ -150,8 +150,27 @@ class UserUnitTest extends TestCase
 
     // test schema: can input another language (email)?
     // test schema: can input English language (email)?
+
     // test schema: can input only integer (email)?
+    public function test_user_input_email_only_integer(){
+        $user = new User([
+            'id' => 1,
+            'email' => '12345@gmail.com',
+
+        ]);
+
+        $this->assertEquals('12345@gmail.com', $user->email);
+    }
+
     // test schema: can input space (email)?
+    // public function test_user_input_email_space(){
+    //     $user = new User([
+    //         'id' => 1,
+    //         'email' => 'Do me@gmail.com',
+    //     ]);
+    //     $this->assertEquals('Do me@gmail.com', $user->email);
+    // }
+
     // test schema: can input another word (not .com) (email)?
     // test schema: can input another word (not @gmail ex. @beam.com) (email)?
     
