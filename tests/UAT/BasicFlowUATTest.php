@@ -79,22 +79,46 @@ class BasicFlowUAT extends TestCase {
 
     // change name
     public function test_change_name() {
+        $user = User::factory()->create();
+        $response = $this->post('/login', [
+            'name' => $user->name,
+            'email' => $user->email,
+            'password' => $user->password,
+        ]);
+        $user->name = 'parn';
 
+        $this -> assertEquals('parn', $user -> name);
     }
 
     // change password
     public function test_change_password() {
+        $user = User::factory()->create();
+        $response = $this->post('/login', [
+            'name' => $user->name,
+            'email' => $user->email,
+            'password' => $user->password,
+        ]);
+        $user->password = 'parn12345';
 
+        $this -> assertEquals('parn12345', $user -> password);
     }
 
     // change email
     public function test_change_email() {
+        $user = User::factory()->create();
+        $response = $this->post('/login', [
+            'name' => $user->name,
+            'email' => $user->email,
+            'password' => $user->password,
+        ]);
+        $user->email = 'parn@gmail.com';
 
+        $this -> assertEquals('parn@gmail.com', $user -> email);
     }
 
     // logout
     public function test_logout() {
-
+        $this->assertTrue(true);
     }
 
 
