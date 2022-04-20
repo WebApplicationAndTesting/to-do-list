@@ -134,7 +134,7 @@ class UserUnitTest extends TestCase
 
     // test schema: can input English language (password)?
     public function test_user_input_eng_lang_password(){
-        $this->assretTrue(true);
+        $this->assertTrue(true);
     }
 
     // test schema: can input only integer (password)?
