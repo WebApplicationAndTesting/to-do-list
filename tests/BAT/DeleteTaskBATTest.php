@@ -9,8 +9,8 @@ use Illuminate\Support\Str;
 use Tests\TestCase;
 
 class DeleteTaskBAT extends TestCase {
-    public function test_delete_task(){
-        $this->delete('/tasks/2');
-        $this->assertDatabaseMissing('tasks',['id'=> 2]);
+    public function test_delete_undefined_task(){
+        $this->delete('/tasks/100');
+        $this->assertDatabaseMissing('tasks',['id'=> 100]);
     }
 }
