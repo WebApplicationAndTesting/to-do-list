@@ -98,7 +98,7 @@ class UserUnitTest extends TestCase
     //         'name' => 'โดม'
     //     ]);
 
-        $this->assertEquals();
+        // $this->assertEquals();
     }
 
 
