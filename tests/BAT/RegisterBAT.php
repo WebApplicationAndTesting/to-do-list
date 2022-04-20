@@ -1,6 +1,15 @@
 <?php
     
-class RegisterBAT {
+namespace Tests\BAT;
+
+use App\Models\Task;
+use App\Models\User;
+use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Foundation\Testing\WithFaker;
+use Illuminate\Support\Facades\Schema;
+use Tests\TestCase;
+
+class RegisterBAT extends TestCase{
 
     // Do not enter any text in the username field.
     public function test_do_not_input_text_in_username_field() {

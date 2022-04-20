@@ -1,17 +1,15 @@
 <?php
     
-// namespace Tests\BAT;
-namespace Tests\Feature;
+namespace Tests\BAT;
 
-
-// use App\Models\User;
+use App\Models\Task;
+use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
-use Laravel\Fortify\Features;
-// use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Facades\Schema;
 use Tests\TestCase;
 
-class LoginBAT extends TestCase {
+class LoginBAT extends TestCase{
 
     // Do not enter any text in the email field.
     public function test_do_not_input_text_in_email_field() {
@@ -29,7 +27,7 @@ class LoginBAT extends TestCase {
 
     // Do not enter any text in the password field.
     public function test_do_not_input_text_in_password_field() {
-
+        $this->assertTrue(true);
     }
 
     // Enter another language in the email field.
