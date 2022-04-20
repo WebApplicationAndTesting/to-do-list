@@ -1,10 +1,30 @@
 <?php
     
-class LoginBAT {
+// namespace Tests\BAT;
+namespace Tests\Feature;
+
+
+// use App\Models\User;
+use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Foundation\Testing\WithFaker;
+use Laravel\Fortify\Features;
+// use Illuminate\Support\Facades\Schema;
+use Tests\TestCase;
+
+class LoginBAT extends TestCase {
 
     // Do not enter any text in the email field.
     public function test_do_not_input_text_in_email_field() {
+        $response = $this->post('/register', [
+            'name' => 'Test User',
+            'email' => 'test@example.com',
+            'password' => 'password',
+            'password_confirmation' => 'password',
+            'terms' => Jetstream::hasTermsAndPrivacyPolicyFeature(),
+        ]);
 
+        $this->assertAuthenticated();
+        $response->assertRedirect(RouteServiceProvider::HOME);
     }
 
     // Do not enter any text in the password field.

@@ -28,7 +28,7 @@ class RegisterBAT {
     }
 
     // Enter another language in the email field.
-     public function test_input_another_language_in_email_field() {
+    public function test_input_another_language_in_email_field() {
 
     }
 
