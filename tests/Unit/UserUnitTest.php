@@ -1,7 +1,5 @@
 <?php
 
-
-
 namespace Tests\Unit;
 
 use App\Models\Task;
@@ -80,6 +78,7 @@ class UserUnitTest extends TestCase
         $this->assertModelMissing($user);
     }
 
+    // test schema: username more than 40 character?
     public function test_name_attribute_less_than_41_char() {
         $user = User::all();
 
@@ -92,17 +91,21 @@ class UserUnitTest extends TestCase
         $this->assertTrue(true);
     }
 
-    // public function test_user_input_name_thai_language() {
+// test schema: can input another language (username)?
+    public function test_user_input_name_thai_language() {
     //     $user = new User([
     //         'id' => 1,
     //         'name' => 'โดม'
     //     ]);
 
-    //     $this->assertEquals();
-    // }
+        $this->assertEquals();
+    }
 
 
     // test schema: can input another language (username)?
+    public function test_user_input_another_lang_username(){
+        $this->assretTrue(true);
+    }
     // test schema: can input English language (username)?
 
     // test schema: can input only integer (username)?
@@ -112,7 +115,6 @@ class UserUnitTest extends TestCase
             'name' => '12345',
 
         ]);
-
         $this->assertEquals('12345', $user->name);
     }
 
@@ -126,7 +128,14 @@ class UserUnitTest extends TestCase
     }
 
     // test schema: can input another language (password)?
+    public function test_user_input_another_lang_password(){
+        $this->assertTrue(true);
+    }
+
     // test schema: can input English language (password)?
+    public function test_user_input_eng_lang_password(){
+        $this->assretTrue(true);
+    }
 
     // test schema: can input only integer (password)?
     public function test_user_input_password_only_integer(){
@@ -135,7 +144,6 @@ class UserUnitTest extends TestCase
             'password' => "12345"
 
         ]);
-
         $this->assertEquals('12345', $user->password);
     }
 
@@ -149,7 +157,14 @@ class UserUnitTest extends TestCase
     }
 
     // test schema: can input another language (email)?
+    public function test_user_input_another_lang_email(){
+        $this->assertTrue(true);
+    }
+
     // test schema: can input English language (email)?
+    public function test_user_input_eng_lang_email(){
+        $this->assertTrue(true);
+    }
 
     // test schema: can input only integer (email)?
     public function test_user_input_email_only_integer(){
@@ -171,7 +186,13 @@ class UserUnitTest extends TestCase
     }
 
     // test schema: can input another word (not .com) (email)?
+    public function test_user_input_another_word_end_email(){
+        $this->assertTrue(true);
+    }
+
     // test schema: can input another word (not @gmail ex. @beam.com) (email)?
-    
+    public function test_user_input_another_word_if_not_gmail(){
+        $this->assertTrue(true);
+    }    
     
 }
