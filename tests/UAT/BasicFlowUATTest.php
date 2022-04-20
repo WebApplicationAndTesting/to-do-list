@@ -33,7 +33,14 @@ class BasicFlowUAT extends TestCase {
 
     // edited task
     public function test_edited_task() {
+        $task = new Task([
+            'user_id' => 1,
+            'description' => 'Add test to todolist',
+        ]);
 
+        $task->description = 'Test edit';
+
+        $this -> assertEquals('Test edit', $task -> description);
     }
 
     // deleted task
