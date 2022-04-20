@@ -15,7 +15,7 @@ class AddTaskBAT extends TestCase{
             'description' => 'learn',
             'date' => '10/10/2022',
             'deadline' => '11/9/2022'
-        ])
+        ]);
         $this->assertEquals('11/9/2022', $task->deadline);
     }
 
