@@ -2,6 +2,7 @@
 
 namespace Tests\UAT;
 
+use App\Models\Task;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
@@ -23,7 +24,11 @@ class BasicFlowUAT extends TestCase {
 
     // add task success
     public function test_add_task_success() {
-
+        $task = new Task([
+            'id' => 1,
+            'description' => 'Test add test to todolist',
+        ]);
+        $this -> assertEquals('Test add test to todolist', $task -> description);
     }
 
     // edited task
@@ -33,7 +38,7 @@ class BasicFlowUAT extends TestCase {
 
     // deleted task
     public function test_deleted_task() {
-
+        
     }
 
     // regis
