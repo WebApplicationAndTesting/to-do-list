@@ -71,5 +71,13 @@ jobs:
           command: php artisan test tests/Integration
 
       - run:
+          name: "Run UAT"
+          command: php artisan test tests/UAT
+
+      - run:
+          name: "Run BAT"
+          command: php artisan test tests/BAT
+
+      - run:
           name: "Run Http Tests"
           command: php artisan test tests/Feature
