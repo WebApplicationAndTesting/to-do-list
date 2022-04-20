@@ -8,8 +8,9 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Str;
 use Tests\TestCase;
 
-class DeleteTaskBAT {
+class DeleteTaskBAT extends TestCase {
     public function test_delete_task(){
-        
+        $this->delete('/tasks/'.2);
+        $this->assertDatabaseMissing('tasks',['id'=> 2]);
     }
 }
