@@ -10,7 +10,7 @@ use Tests\TestCase;
 
 class DeleteTaskBAT extends TestCase {
     public function test_delete_task(){
-        $this->delete('/tasks/'.2);
+        $this->delete('/tasks/2');
         $this->assertDatabaseMissing('tasks',['id'=> 2]);
     }
 }
