@@ -12,12 +12,12 @@ class UserTaskIntegrationTest extends TestCase {
     use WithFaker, RefreshDatabase;
 
     // User have 0 test
-    public function test_user_have_zero_test() {
+    public function test_user_have_zero_task() {
         $this->assertTrue(true);
     }
 
     // User have 999 test
-    public function test_user_have_999_test() {
+    public function test_user_have_999_task() {
         $this->assertTrue(true);
     }
 

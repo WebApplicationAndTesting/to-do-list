@@ -23,7 +23,13 @@ class LoginBAT extends TestCase{
     
     // Do not enter any text in the email field.
     public function test_do_not_input_text_in_email_field() {
-        $this->assertTrue(true);
+        $user = User::factory()->create();
+        $this->post('/login', [
+            'email' => '',
+            'password' => 'password',
+        ]);
+        $this->assertGuest();
+        // $this->assertTrue(true);
     }
 
 
@@ -57,6 +63,12 @@ class LoginBAT extends TestCase{
 
     // Enter symbol in the email field.
     public function test_input_symbol_in_email_field() {
+        // $user = User::factory()->create();
+        // $this->post('/login', [
+        //     'email' => 🐸🐸🐸,
+        //     'password' => 'อยากเรียน',
+        // ]);
+        // $this->assertGuest();
         $this->assertTrue(true);
     }
 

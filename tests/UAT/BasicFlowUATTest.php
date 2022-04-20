@@ -23,6 +23,13 @@ class BasicFlowUAT extends TestCase {
     // deleted task
     // regis
     // login
+    public function test_user_login() {
+        $user = User::factory()->create();
+        $this->post('/login', [
+            'email' => $user->email,
+            'password' => 'password',
+        ]);
+    }
     // change name
     // change password
     // change email
