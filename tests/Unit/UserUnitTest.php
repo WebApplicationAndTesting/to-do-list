@@ -104,7 +104,7 @@ class UserUnitTest extends TestCase
 
     // test schema: can input another language (username)?
     public function test_user_input_another_lang_username(){
-        $this->assretTrue(true);
+        $this->assertTrue(true);
     }
     // test schema: can input English language (username)?
 
