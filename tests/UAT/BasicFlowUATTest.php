@@ -25,7 +25,7 @@ class BasicFlowUAT extends TestCase {
     // add task success
     public function test_add_task_success() {
         $task = new Task([
-            'id' => 1,
+            'user_id' => 1,
             'description' => 'Test add test to todolist',
         ]);
         $this -> assertEquals('Test add test to todolist', $task -> description);
@@ -38,7 +38,13 @@ class BasicFlowUAT extends TestCase {
 
     // deleted task
     public function test_deleted_task() {
-        
+        $task = new Task([
+            'user_id' => 1,
+            'description' => 'Test add test to todolist',
+        ]);
+
+        $this->delete('/tasks/'.$task->id);
+        $this->assertDatabaseMissing('tasks',['id'=> $task->id]);
     }
 
     // regis
