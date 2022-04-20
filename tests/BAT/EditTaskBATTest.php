@@ -10,13 +10,17 @@ use Tests\TestCase;
 
 class EditTaskBAT extends TestCase 
 {
-    public function test_edit_task() {
+    public function test_edit_task_to_null() {
         $task = new Task([
-            'id' => 1,
-            'description' => 'Add new Task',
-            'goal_date' => '2021-11-11',
+            'user_id' => 1,
+            'description' => 'Test add test to todolist',
+            'date' => '10/10/2022',
+            'deadline' => '11/10/2022'
         ]);
-        $this->assertTrue(true);
+
+        $task->description = null;
+
+        $this -> assertEquals(null, $task -> description);
     }
 
 }
