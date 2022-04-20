@@ -2,14 +2,14 @@
 
 namespace Tests\Integration;
 
-use App\Models\Task;
-use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Support\Facades\Schema;
 use Tests\TestCase;
 
 class UserTaskIntegrationTest extends TestCase {
+
+    use WithFaker, RefreshDatabase;
 
     // User have 0 test
     public function test_user_have_zero_test() {

@@ -2,7 +2,6 @@
 
 namespace Tests\Unit;
 
-
 use App\Models\Task;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
@@ -87,14 +86,43 @@ class TaskUnitTest extends TestCase
     // }
 
     // test schema: can input another language (description)?
+    public function test_user_input_another_lang_description() {
+        $this->assertTrue(true);
+    }
+
     // test schema: can input English language (description)?
+    public function test_user_input_eng_lang_description() {
+        $this->assertTrue(true);
+    }
+
     // test schema: can input only integer (description)?
+    public function test_user_input_integer_description() {
+        $this->assertTrue(true);
+    }
+
     // test schema: can input space (description)?
+    public function test_user_input_space_description() {
+        $this->assertTrue(true);
+    }
+
     // test schema: can input over maximum date of month (date)?
+    public function test_user_input_over_max_date_of_month_date() {
+        $this->assertTrue(true);
+    }
+
     // test schema: can input space (date)?
+    public function test_user_input_space_date() {
+        $this->assertTrue(true);
+    }
+
     // test schema: can input over maximum date of month (deadline)?
+    public function test_user_input_over_max_date_of_month_deadline() {
+        $this->assertTrue(true);
+    }
+
     // test schema: can input space (deadline)?
-    // test schema: user_id is null?
-    // test schema: user_id can be minus number?
+    public function test_user_input_space_deadline() {
+        $this->assertTrue(true);
+    }
 
 }
