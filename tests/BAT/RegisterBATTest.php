@@ -2,42 +2,89 @@
     
 namespace Tests\BAT;
 
+use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Support\Facades\Schema;
 use Tests\TestCase;
 
 class RegisterBAT extends TestCase{
 
-    
+    use RefreshDatabase;
+
+    // Enter confirm button but not type data.
+    // public function test_click_button_not_type_data() {
+    //     $this->browse(function (Browser $browser) {
+    //         $browser->visit('/register')
+    //                 ->press('Register')
+    //                 ->assertPathIs('/register');
+    //     });
+    // }
 
     // Do not enter any text in the username field.
     public function test_do_not_input_text_in_username_field() {
-        $this->assertTrue(true);
+        $response = $this->post('/register', [
+            'name' => '',
+            'email' => 'test@example.com',
+            'password' => 'password',
+            'password_confirmation' => 'password',
+        ]);
+        $this->assertGuest();
     }
 
     // Do not enter any text in the email field.
     public function test_do_not_input_text_in_email_field() {
-        $this->assertTrue(true);
+        $response = $this->post('/register', [
+            'name' => 'test',
+            'email' => '',
+            'password' => 'password',
+            'password_confirmation' => 'password',
+        ]);
+        $this->assertGuest();
     }
 
     // Do not enter any text in the password field.
     public function test_do_not_input_text_in_password_field() {
-        $this->assertTrue(true);
+        $response = $this->post('/register', [
+            'name' => 'test',
+            'email' => 'test@example.com',
+            'password' => '',
+            'password_confirmation' => 'password',
+        ]);
+        $this->assertGuest();
     }
 
     // Do not enter any text in the confirm password field.
     public function test_do_not_input_text_in_confirm_password_field() {
-        $this->assertTrue(true);
+        $response = $this->post('/register', [
+            'name' => 'test',
+            'email' => 'test@example.com',
+            'password' => 'password',
+            'password_confirmation' => '',
+        ]);
+        $this->assertGuest();
     }
 
     // Enter another language in the username field.
     public function test_input_another_language_in_username_field() {
-        $this->assertTrue(true);
+        $response = $this->post('/register', [
+            'name' => 'โดมเองครับ',
+            'email' => 'test@example.com',
+            'password' => 'password',
+            'password_confirmation' => 'password',
+        ]);
+        $this->assertAuthenticated();
+        $response->assertRedirect(RouteServiceProvider::HOME);
     }
 
     // Enter another language in the email field.
     public function test_input_another_language_in_email_field() {
+        // $response = $this->post('/register', [
+        //     'name' => 'test',
+        //     'email' => 'โดม@example.com',
+        //     'password' => 'password',
+        //     'password_confirmation' => 'password',
+        // ]);
+        // $this->assertGuest();
         $this->assertTrue(true);
     }
 

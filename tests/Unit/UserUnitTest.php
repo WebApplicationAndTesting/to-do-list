@@ -91,21 +91,11 @@ class UserUnitTest extends TestCase
         $this->assertTrue(true);
     }
 
-// test schema: can input another language (username)?
-    // public function test_user_input_name_thai_language() {
-    //     $user = new User([
-    //         'id' => 1,
-    //         'name' => 'โดม'
-    //     ]);
-
-        // $this->assertEquals();
-    // }
-
-
     // test schema: can input another language (username)?
     public function test_user_input_another_lang_username(){
         $this->assertTrue(true);
     }
+
     // test schema: can input English language (username)?
 
     // test schema: can input only integer (username)?

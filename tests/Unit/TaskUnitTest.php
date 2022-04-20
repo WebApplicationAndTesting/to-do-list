@@ -73,36 +73,48 @@ class TaskUnitTest extends TestCase
         $this->assertTrue(true);
     }
 
-    // public function test_task_is_null() {
-    //     try {
-    //         $task = new Task();
-    //         $task->user_id = 1;
-    //         $task->save();
-    //         $this->assertTrue(false);
-    //     }
-    //     catch(QueryException $e) {
-    //         $this->assertTrue(true);
-    //     }
-    // }
-
     // test schema: can input another language (description)?
     public function test_user_input_another_lang_description() {
-        $this->assertTrue(true);
+        $task = new Task([
+            'user_id' => "1",
+            'description' => "โดมทำข้อนี้",
+            'date' => "10/10/2022" ,
+            "deadline" => "11/10/2022"
+        ]);
+        $this->assertEquals('1', $task->user_id);
     }
 
     // test schema: can input English language (description)?
     public function test_user_input_eng_lang_description() {
-        $this->assertTrue(true);
+        $task = new Task([
+            'user_id' => "1",
+            'description' => "Hello",
+            'date' => "10/10/2022" ,
+            "deadline" => "11/10/2022"
+        ]);
+        $this->assertEquals('1', $task->user_id);
     }
 
     // test schema: can input only integer (description)?
     public function test_user_input_integer_description() {
-        $this->assertTrue(true);
+        $task = new Task([
+            'user_id' => "1",
+            'description' => "123",
+            'date' => "10/10/2022" ,
+            "deadline" => "11/10/2022"
+        ]);
+        $this->assertEquals('1', $task->user_id);
     }
 
     // test schema: can input space (description)?
     public function test_user_input_space_description() {
-        $this->assertTrue(true);
+        $task = new Task([
+            'user_id' => "1",
+            'description' => " ",
+            'date' => "10/10/2022" ,
+            "deadline" => "11/10/2022"
+        ]);
+        $this->assertEquals('1', $task->user_id);
     }
 
     // test schema: can input over maximum date of month (date)?
@@ -112,7 +124,13 @@ class TaskUnitTest extends TestCase
 
     // test schema: can input space (date)?
     public function test_user_input_space_date() {
-        $this->assertTrue(true);
+        $task = new Task([
+            'user_id' => "1",
+            'description' => "123",
+            'date' => " " ,
+            "deadline" => "11/10/2022"
+        ]);
+        $this->assertEquals('1', $task->user_id);
     }
 
     // test schema: can input over maximum date of month (deadline)?
@@ -122,7 +140,13 @@ class TaskUnitTest extends TestCase
 
     // test schema: can input space (deadline)?
     public function test_user_input_space_deadline() {
-        $this->assertTrue(true);
+        $task = new Task([
+            'user_id' => "1",
+            'description' => "123",
+            'date' => "10/10/2022" ,
+            "deadline" => " "
+        ]);
+        $this->assertEquals('1', $task->user_id);
     }
 
 }
